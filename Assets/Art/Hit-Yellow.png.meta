@@ -1,0 +1,638 @@
+fileFormatVersion: 2
+guid: bfc0634b3812ce744b9d26d47ea903f0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hit-Yellow_0
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 3435
+        width: 312
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1cc5dab8f8ce04e8da0c9f2e2e2f05
+      internalID: -199259338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_1
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 3366
+        width: 564
+        height: 569
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308408719d306d64a8651ce7ea26e1c1
+      internalID: 902659922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_2
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 3339
+        width: 556
+        height: 620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39860bf2fd192e1449ba856b7246bbba
+      internalID: -2086030133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_3
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 2245
+        width: 544
+        height: 751
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4caa2195179b99c47b25c5b66c0a0c63
+      internalID: 76763576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_4
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 2268
+        width: 586
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0c9aaa097d4ad499cdc75033e65223
+      internalID: -1297504386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_5
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2313
+        width: 557
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d4ff90bae36554a8fe4a99475f8eb4
+      internalID: 448223990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_6
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 2308
+        width: 547
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f0e640a0330b94bb9c97487f5ae793
+      internalID: -1803497970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_10
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1267
+        width: 593
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162ae12651609b34a9257209c8b4e138
+      internalID: -1526775786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_12
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1246
+        width: 647
+        height: 708
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dfeb55d361f87439b66d886f100c5f
+      internalID: 1385108415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_14
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1329
+        width: 538
+        height: 633
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deabf49132eb9814f982b67d941220a7
+      internalID: -227735088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_32
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1467
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026eede0f955f494688a76bdba382f13
+      internalID: 863609498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_35
+      rect:
+        serializedVersion: 2
+        x: 3274
+        y: 1274
+        width: 572
+        height: 649
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d93ccbec5593d146bb419f36a97f1f0
+      internalID: 1420903449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_58
+      rect:
+        serializedVersion: 2
+        x: 3319
+        y: 156
+        width: 464
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a33316e0042374fa30ae83d23dad16
+      internalID: -1212160415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_72
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 187
+        width: 557
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7cf148f486a0549b5022762d4b3edf
+      internalID: -288559371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_74
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 180
+        width: 524
+        height: 677
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53b8bba8355f874bb6644fff759a155
+      internalID: 1242758459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_76
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 252
+        width: 547
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a340fd81b6dd64bb69b411cd9bf721
+      internalID: -2048256100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_79
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 354
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710e7281ed80b6345b2ed923fe24a044
+      internalID: -2123047141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_82
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 352
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e68834a6139de240bff11f20c381e9d
+      internalID: 806451499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hit-Yellow_85
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 352
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4954aadf5a0e8c34cb069953d6b02a70
+      internalID: 1668728496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hit-Yellow_20: 1962659445
+      Hit-Yellow_89: 2110099422
+      Hit-Yellow_46: -2083122090
+      Hit-Yellow_9: -2086805789
+      Hit-Yellow_65: 1399559950
+      Hit-Yellow_25: -1422694555
+      Hit-Yellow_30: -1665907492
+      Hit-Yellow_51: 1334707964
+      Hit-Yellow_50: -780260312
+      Hit-Yellow_6: -1803497970
+      Hit-Yellow_31: 625068642
+      Hit-Yellow_58: -1212160415
+      Hit-Yellow_86: -960213911
+      Hit-Yellow_27: -1371041878
+      Hit-Yellow_15: 443027154
+      Hit-Yellow_16: 416774227
+      Hit-Yellow_19: 406551347
+      Hit-Yellow_59: 1941941118
+      Hit-Yellow_75: 1836786389
+      Hit-Yellow_52: -365866624
+      Hit-Yellow_84: -77551556
+      Hit-Yellow_4: -1297504386
+      Hit-Yellow_36: -1489670160
+      Hit-Yellow_82: 806451499
+      Hit-Yellow_42: 1996005630
+      Hit-Yellow_88: -1676273430
+      Hit-Yellow_60: 162634296
+      Hit-Yellow_45: 422012955
+      Hit-Yellow_90: -525714621
+      Hit-Yellow_23: -342169039
+      Hit-Yellow_71: 1329622724
+      Hit-Yellow_68: 1413081206
+      Hit-Yellow_85: 1668728496
+      Hit-Yellow_33: 1394488589
+      Hit-Yellow_10: -1526775786
+      Hit-Yellow_92: -528079935
+      Hit-Yellow_87: -131922645
+      Hit-Yellow_78: -707901735
+      Hit-Yellow_18: -2140609396
+      Hit-Yellow_3: 76763576
+      Hit-Yellow_22: -332680262
+      Hit-Yellow_41: -1078119769
+      Hit-Yellow_54: -365515491
+      Hit-Yellow_14: -227735088
+      Hit-Yellow_69: 1970460142
+      Hit-Yellow_21: 13242696
+      Hit-Yellow_38: -1431865496
+      Hit-Yellow_70: -27327311
+      Hit-Yellow_74: 1242758459
+      Hit-Yellow_73: 1739075334
+      Hit-Yellow_35: 1420903449
+      Hit-Yellow_39: 777574460
+      Hit-Yellow_55: -1871909744
+      Hit-Yellow_80: -2101205538
+      Hit-Yellow_1: 902659922
+      Hit-Yellow_49: -958027857
+      Hit-Yellow_72: -288559371
+      Hit-Yellow_91: -140974664
+      Hit-Yellow_81: -501145220
+      Hit-Yellow_64: -635696282
+      Hit-Yellow_17: -1463408638
+      Hit-Yellow_12: 1385108415
+      Hit-Yellow_76: -2048256100
+      Hit-Yellow_67: -47165327
+      Hit-Yellow_32: 863609498
+      Hit-Yellow_83: 1508238652
+      Hit-Yellow_79: -2123047141
+      Hit-Yellow_47: -107853053
+      Hit-Yellow_48: 1035669400
+      Hit-Yellow_7: -1048640119
+      Hit-Yellow_37: 1256392011
+      Hit-Yellow_77: 1933346990
+      Hit-Yellow_0: -199259338
+      Hit-Yellow_63: -176151517
+      Hit-Yellow_44: -1882912458
+      Hit-Yellow_5: 448223990
+      Hit-Yellow_40: 1675594292
+      Hit-Yellow_28: 1816465312
+      Hit-Yellow_34: 160484929
+      Hit-Yellow_56: -1864796311
+      Hit-Yellow_24: 1508760681
+      Hit-Yellow_43: -626816047
+      Hit-Yellow_61: 348408980
+      Hit-Yellow_26: 507832760
+      Hit-Yellow_11: -2027363303
+      Hit-Yellow_2: -2086030133
+      Hit-Yellow_8: -716004475
+      Hit-Yellow_62: 1126741139
+      Hit-Yellow_29: -1867629288
+      Hit-Yellow_13: 1653159110
+      Hit-Yellow_66: -85335822
+      Hit-Yellow_57: 129946030
+      Hit-Yellow_53: -1178626767
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
