@@ -12,5 +12,6 @@ namespace SpaceShooter
 
         [Header("Stats")]
         public float movespeed = 1.0f;
+        public int hitpoints = 10;
     }
 }

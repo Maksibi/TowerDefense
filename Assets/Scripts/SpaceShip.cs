@@ -81,7 +81,8 @@ namespace SpaceShooter
 
         public void Use(EnemyAsset asset)
         {
-            
+            m_maxLinearVelocity = asset.movespeed;
+            m_hitpoints = asset.hitpoints;
         }
     }
 }

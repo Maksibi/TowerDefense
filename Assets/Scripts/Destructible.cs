@@ -12,7 +12,7 @@ namespace SpaceShooter
         public bool IsIndestructible => m_indestructible;
 
 
-        [SerializeField] private int m_hitpoints;
+        [SerializeField] protected int m_hitpoints;
         public int Hitpoints => m_hitpoints;
 
         private int m_currentHitpoints;
