@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2ebfe3f5195bdb45bf1f9b283b0ebd1, type: 3}
-  m_Name: Turret Properties
+  m_Name: Turret_Fireballs
   m_EditorClassIdentifier: 
   _turretMode: 2
-  _projectilePrefab: {fileID: 6262735223204204621, guid: 79e1b267982ecc14d8bc84cd34fed4fe, type: 3}
-  _firerate: 0.5
+  _projectilePrefab: {fileID: -8653674568976975268, guid: 19c88bd2f2f765b4fb36a9cb3662f926, type: 3}
+  _firerate: 1
   _energyUsage: 0
   _ammoUsage: 0
   _launchSFX: {fileID: 0}

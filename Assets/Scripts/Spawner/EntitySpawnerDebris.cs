@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class EntitySpawnerDebris : MonoBehaviour
     {
         #region Editor Fields
-        [SerializeField] private Destructible[] debrisPrefabs;
+        [SerializeField] private Enemy[] debrisPrefabs;
 
         [SerializeField] private int debrisCount;
 
@@ -25,7 +25,7 @@ namespace SpaceShooter
             GameObject debris = Instantiate(debrisPrefabs[index].gameObject);
 
             debris.transform.position = circleArea.GetRandomInsideArea();
-            debris.GetComponent<Destructible>().EventOnDeath.AddListener(OnDebrisDestroy);
+            debris.GetComponent<Enemy>().EventOnDeath.AddListener(OnDebrisDestroy);
 
             Rigidbody2D rigidbody = debris.GetComponent<Rigidbody2D>();
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class Turret : MonoBehaviour
     {
@@ -8,7 +8,8 @@ namespace SpaceShooter
         [SerializeField] private TurretMode _turretMode;
         public TurretMode TurretMode => _turretMode;
 
-        [SerializeField] private TurretProperties TurretProperties;
+        [SerializeField] private TurretProperties _turretProperties;
+        public TurretProperties TurretProperties { set { _turretProperties = value; } }
         #endregion
         private float _refireTimer;
 
@@ -23,7 +24,7 @@ namespace SpaceShooter
         }
         public void Fire()
         {
-            if(TurretProperties == null) return;
+            if(_turretProperties == null) return;
 
             if (_refireTimer > 0 | CanFire == false) return;
 
@@ -31,18 +32,23 @@ namespace SpaceShooter
             //if (spaceShip.DrawAmmo(TurretProperties.AmmoUsage) == false) return;
 
 
-            Projectile projectile = Instantiate(TurretProperties.ProjectilePrefab, transform.position, transform.rotation).GetComponent<Projectile>();
+            Projectile projectile = Instantiate(_turretProperties.ProjectilePrefab, transform.position, transform.rotation).GetComponent<Projectile>();
 
-            _refireTimer = TurretProperties.Firerate;
+            _refireTimer = _turretProperties.Firerate;
 
-            if(TurretProperties.LaunchSFX != null) AudioSource.PlayClipAtPoint(TurretProperties.LaunchSFX, transform.position);
+            if(_turretProperties.LaunchSFX != null) AudioSource.PlayClipAtPoint(_turretProperties.LaunchSFX, transform.position);
         }
         public void AssignLoadout(TurretProperties props)
         {
             if (_turretMode != props.TurretMode) return;
 
             _refireTimer = 0;
-            TurretProperties = props;
+            _turretProperties = props;
+        }
+        public void UseAsset(TurretProperties turretProperties)
+        {
+            _turretProperties = turretProperties;
+            TurretProperties = turretProperties;
         }
         #endregion
     }

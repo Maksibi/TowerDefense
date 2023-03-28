@@ -1,16 +1,16 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class EnemySpawner : EntitySpawner
     {
-        [SerializeField] private Enemy enemyPrefab;
+        [SerializeField] private SpaceShip enemyPrefab;
         [SerializeField] private Path path;
         [SerializeField] private EnemyAsset[] enemyAssets;
 
         protected override GameObject GenerateSpawnedEntity()
         {
-            Enemy enemy =  Instantiate(enemyPrefab);
+            SpaceShip enemy =  Instantiate(enemyPrefab);
 
             enemy.Use(enemyAssets[Random.Range(0, enemyAssets.Length)]);
 

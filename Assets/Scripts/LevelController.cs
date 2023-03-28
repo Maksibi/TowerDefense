@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public interface ILevelCondition
     {

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
-    public class Destructible : Entity
+    public abstract class Destructible : Entity
     {
         #region Properties
 
@@ -44,24 +44,29 @@ namespace SpaceShooter
 
         protected virtual void OnDeath()
         {
-            Destroy(gameObject);
+            Debug.Log(Score);
+            Debug.Log(score);
+
+            Player.Instance.AddGold(Score);
 
             _EventOnDeath?.Invoke();
+
+            Destroy(gameObject);
         }
 
-        private static HashSet<Destructible> allDestructibles;
+        private static HashSet<Enemy> allDestructibles;
 
-        public static IReadOnlyCollection<Destructible> AllDestructibles => allDestructibles;
+        public static IReadOnlyCollection<Enemy> AllDestructibles => allDestructibles;
 
         protected virtual void OnEnable()
         {
-            if(allDestructibles == null) allDestructibles = new HashSet<Destructible>();
+            if(allDestructibles == null) allDestructibles = new HashSet<Enemy>();
 
-            allDestructibles.Add(this);
+            allDestructibles.Add((Enemy)this);
         }
         protected virtual void OnDestroy()
         {
-            allDestructibles.Remove(this);
+            allDestructibles.Remove((Enemy)this);
         }
 
         public const int TeamIDNeutral = 0, TeamIDAlly = 1, TeamIDEnemy = 2;
@@ -74,10 +79,9 @@ namespace SpaceShooter
 
         #region Score
         [SerializeField] private int score;
-        public int Score => score;
-
+        [HideInInspector] public int Score;
         #endregion
-        protected void Use(EnemyAsset asset)
+        public virtual void Use(EnemyAsset asset)
         {
             m_hitpoints = asset.hitpoints;
             score = asset.score;

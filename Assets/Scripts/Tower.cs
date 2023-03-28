@@ -1,4 +1,4 @@
-using SpaceShooter;
+using TowerDefense;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -6,9 +6,9 @@ public class Tower : MonoBehaviour
     [SerializeField] private float radius = 2.0f;
 
     private Turret[] turrets;
-    private Destructible target;
+    private Enemy target;
 
-    private void Start()
+    private void Awake()
     {
         turrets = GetComponentsInChildren<Turret>();
     }
@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
         {
             if (enteredEntity)
             {
-                target = enteredEntity.transform.root.GetComponent<Destructible>();
+                target = enteredEntity.transform.root.GetComponent<Enemy>();
             }
         }
     }
@@ -52,5 +52,15 @@ public class Tower : MonoBehaviour
     private void SetTarget()
     {
 
+    }
+    public void UseAsset(TowerAsset towerAsset)
+    {
+        if (turrets != null)
+        {
+            foreach (Turret turret in turrets)
+            {
+                turret.UseAsset(towerAsset.turretProperties);
+            }
+        }
     }
 }

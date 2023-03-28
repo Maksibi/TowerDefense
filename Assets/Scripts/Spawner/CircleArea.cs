@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class CircleArea : MonoBehaviour
     {

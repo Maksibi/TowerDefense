@@ -129,8 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2773bbd2b1f114687a09709b8aca8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nickname: 
-  velocity: 5
+  velocity: 7
   lifetime: 10
   damage: 5
   impactEffect: {fileID: -6491856912296486787, guid: 7d0d78457f5df03419d3827477958690, type: 3}

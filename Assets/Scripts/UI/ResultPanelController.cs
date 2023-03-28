@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class ResultPanelController : MonoSingleton<ResultPanelController>
     {

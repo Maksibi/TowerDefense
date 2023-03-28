@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Red Enemy
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 1}
+  spriteScale: {x: 3, y: 3}
+  animations: {fileID: 9100000, guid: 748cf807af588114cb59e246492df4e0, type: 2}
+  movespeed: 0.7
+  hitpoints: 20
+  score: 2
+  damage: 1

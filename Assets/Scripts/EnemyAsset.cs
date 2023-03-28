@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     [CreateAssetMenu]
     public sealed class EnemyAsset : ScriptableObject
@@ -14,5 +14,6 @@ namespace SpaceShooter
         public float movespeed = 1.0f;
         public int hitpoints = 10;
         public int score = 1;
+        public int damage = 1;
     }
 }

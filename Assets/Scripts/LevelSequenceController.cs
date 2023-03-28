@@ -2,7 +2,7 @@ using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class LevelSequenceController : MonoSingleton<LevelSequenceController>
     {

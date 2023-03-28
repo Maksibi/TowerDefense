@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 450348342392009116}
   - component: {fileID: 5908773947412290403}
   - component: {fileID: 188576414}
-  - component: {fileID: -3802697677925188099}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -212,6 +211,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   score: 0
+  Score: 0
+  damage: 1
   m_mass: 1
   m_thrust: 1000
   m_mobility: 1000
@@ -235,21 +236,24 @@ MonoBehaviour:
   behaviour: 1
   patrolPoint: {fileID: 0}
   projectile: {fileID: 0}
+  OnEndPath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   navigationLinear: 1
   navigationAngular: 1
   randomSelectMovePointTime: 0
   newTargetSearchTime: 0
   shootDelay: 0
   evadeRayLength: 0
---- !u!114 &-3802697677925188099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722530933027300304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9944f52b64fe3d344adce6768e818a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

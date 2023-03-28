@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: White Enemy
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 1, a: 1}
+  spriteScale: {x: 2, y: 2}
+  animations: {fileID: 9100000, guid: 554903195b8af674eb2642682b696144, type: 2}
+  movespeed: 1.5
+  hitpoints: 10
+  score: 1
+  damage: 1

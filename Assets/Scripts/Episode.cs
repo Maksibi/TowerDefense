@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     [CreateAssetMenu]
     public class Episode : ScriptableObject

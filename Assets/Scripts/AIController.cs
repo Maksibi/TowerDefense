@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     [RequireComponent(typeof(SpaceShip))]
     public class AIController : MonoBehaviour
@@ -17,6 +18,8 @@ namespace SpaceShooter
 
         [SerializeField] private Projectile projectile;
 
+        [SerializeField] public UnityEvent OnEndPath;
+        
         public AIPointControl PatrolPoint
         {
             set
@@ -41,7 +44,7 @@ namespace SpaceShooter
 
         private Vector3 movePosition, leadPosition;
 
-        private Destructible selectedTarget;
+        private Enemy selectedTarget;
 
         private Rigidbody2D selectedTargetRB;
 
@@ -56,7 +59,6 @@ namespace SpaceShooter
             spaceShip = GetComponent<SpaceShip>();
             InitTimers();
 
-            Projectile projectile = new Projectile();
         }
         private void Update()
         {
@@ -107,7 +109,12 @@ namespace SpaceShooter
                             pathIndex++;
                             if (path.Lenght > pathIndex) SetPatrolBehaviour(path[pathIndex]);
 
-                            else Destroy(gameObject) ;
+                            else
+                            {
+                                OnEndPath?.Invoke();
+
+                                Destroy(gameObject);
+                            }
                         }
                         else movePosition = patrolPoint.transform.position;
                     }
@@ -159,17 +166,17 @@ namespace SpaceShooter
             //leadPosition = Utils.MakeLead(projectile, selectedTarget.transform, transform, selectedTargetRB);
             movePosition = leadPosition;
         }
-        private Destructible FindNearestDestructibleTarget()
+        private Enemy FindNearestDestructibleTarget()
         {
             float maxDist = float.MaxValue;
 
-            Destructible potentialTarget = null;
+            Enemy potentialTarget = null;
 
-            foreach (var v in Destructible.AllDestructibles)
+            foreach (var v in Enemy.AllDestructibles)
             {
                 if (v.GetComponent<SpaceShip>() == spaceShip) continue;
 
-                if (v.TeamID == Destructible.TeamIDNeutral) continue;
+                if (v.TeamID == Enemy.TeamIDNeutral) continue;
 
                 if (v.TeamID == spaceShip.TeamID) continue;
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
-    public class Projectile : Entity
+    public class Projectile : MonoBehaviour
     {
         #region Editor Fields
         [SerializeField] private float velocity, lifetime;
@@ -27,18 +27,17 @@ namespace SpaceShooter
             RaycastHit2D hitRay = Physics2D.Raycast(transform.position, transform.up, stepLength);
             if (hitRay)
             {
-                Destructible destructible = hitRay.collider.transform.root.GetComponent<Destructible>();
+                Enemy enemy = hitRay.collider.transform.root.GetComponent<Enemy>();
 
-                if (destructible != null & destructible != _parent)
+                if (enemy != null & enemy != _parent)
                 {
-                    destructible.ApplyDamage(damage);
+                    enemy.ApplyDamage(damage);
 
                     if (_parent == null) OnProjectileLifeEnd(hitRay.collider, hitRay.point);//////
 
-                    if (destructible.CurrentHitpoints <= 0)
+                    if (enemy.CurrentHitpoints <= 0)
                     {
-                        Player.Instance.AddScore(destructible.Score);
-                        if (destructible.TeamID == 2) Player.Instance.AddKill();
+                        if (enemy.TeamID == 2) Player.Instance.AddKill();
                     }
                 }
                 OnProjectileLifeEnd(hitRay.collider, hitRay.point);
@@ -53,9 +52,9 @@ namespace SpaceShooter
 
             Destroy(gameObject);
         }
-        private Destructible _parent;
+        private Enemy _parent;
 
-        public void SetParentShooter(Destructible parent)
+        public void SetParentShooter(Enemy parent)
         {
             _parent = parent;
         }

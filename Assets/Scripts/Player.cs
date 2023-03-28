@@ -1,19 +1,27 @@
+using System;
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     public class Player : MonoSingleton<Player>
     {
         #region Editor Fields
         [SerializeField] private int _livesAmount;
+
         [SerializeField] private SpaceShip ship;
         public SpaceShip ActiveShip => ship;
+
         [SerializeField] private GameObject _PlayerShipPrefab;
 
-
+        [SerializeField] private int playerGold;
         #endregion
+        public static event Action<int> OnGoldUpdate;
+        public static event Action<int> OnLivesUpdate;
+
         private void Start()
         {
+            OnGoldUpdate(playerGold);
+            OnLivesUpdate(_livesAmount);
             Respawn();
         }
         protected override void Awake()
@@ -21,6 +29,34 @@ namespace SpaceShooter
             base.Awake();
 
             if (ship != null) Destroy(ship.gameObject);
+        }
+        public void TakeDamage(int damage)
+        {
+            _livesAmount -= damage;
+
+            OnLivesUpdate(_livesAmount);
+
+            if (_livesAmount <= 0)
+            {
+                LevelSequenceController.Instance.FinishCurrentLevel(false);
+            }
+        }
+        public void AddGold(int gold)
+        {
+            playerGold += gold;
+            OnGoldUpdate(playerGold);
+        }
+        public void SubtractGold(int gold)
+        {
+            playerGold -= gold;
+            OnGoldUpdate(playerGold);
+        }
+        public void ChangeLives(int lives)
+        {
+
+            TakeDamage(lives);
+
+            OnLivesUpdate(_livesAmount);
         }
         #region Private API
         private void OnShipDeath()
@@ -35,14 +71,17 @@ namespace SpaceShooter
         }
         private void Respawn()
         {
-            if(LevelSequenceController.PlayerShip != null)
+            if (LevelSequenceController.PlayerShip != null)
             {
                 var newPlayerShip = Instantiate(LevelSequenceController.PlayerShip);
-
-                ship = newPlayerShip.GetComponent<SpaceShip>();
-                ship.EventOnDeath.AddListener(OnShipDeath);
+                if (ship != null)
+                {
+                    ship = newPlayerShip.GetComponent<SpaceShip>();
+                    ship.EventOnDeath.AddListener(OnShipDeath);
+                }
             }
         }
+
         #endregion
 
         #region Score
@@ -53,13 +92,23 @@ namespace SpaceShooter
         {
             NumKills++;
         }
-        public void AddScore(int num)
-        {
-            Score += num;
-            Debug.Log(Score);
-            Debug.Log(num);
-        }
 
+        [SerializeField] private Tower towerPrefab;
+        public void TryBuild(TowerAsset towerAsset, Transform buildSite)
+        {
+            if (playerGold >= towerAsset.GoldCost & buildSite != null)
+            {
+                Tower tower = Instantiate(towerPrefab, buildSite.position, Quaternion.identity);
+
+                tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.towerGraphics;
+                tower.UseAsset(towerAsset);
+
+                Destroy(buildSite.gameObject);
+
+                SubtractGold(towerAsset.GoldCost);
+            }
+            else return;
+        }
         #endregion
     }
 }

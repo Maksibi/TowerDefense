@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
-namespace SpaceShooter
+namespace TowerDefense
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class SpaceShip : Destructible
+    public class SpaceShip : Enemy
     {
         #region Properties
         public float ThrustControl
@@ -23,9 +22,7 @@ namespace SpaceShooter
                 _torqueControl = value;
             }
         }
-
         #endregion
-
 
         #region Editor Fields
         [Header("Space Ship")]
@@ -79,8 +76,9 @@ namespace SpaceShooter
         }
         #endregion
 
-        public void Use(EnemyAsset asset)
+        public override void Use(EnemyAsset asset)
         {
+            base.Use(asset);
             m_maxLinearVelocity = asset.movespeed;
         }
     }
