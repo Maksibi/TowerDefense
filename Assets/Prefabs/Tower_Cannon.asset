@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00062ea186cb888499b60a2d41195075, type: 3}
-  m_Name: Tower_Fireballs
+  m_Name: Tower_Cannon
   m_EditorClassIdentifier: 
-  GoldCost: 25
-  GUISprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
-  towerGraphics: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
-  firerate: 1
-  turretProperties: {fileID: 11400000, guid: 7343323853c9b5344be24f8342f26647, type: 2}
+  GoldCost: 40
+  GUISprite: {fileID: 21300000, guid: 4eb6d2754468c374d95e339152c3a948, type: 3}
+  towerGraphics: {fileID: 21300000, guid: 961542bf834d173448be6e9b235a3b66, type: 3}
+  firerate: 1.5
+  turretProperties: {fileID: 11400000, guid: 97acd269b172f8642ad1e43546b5fb19, type: 2}

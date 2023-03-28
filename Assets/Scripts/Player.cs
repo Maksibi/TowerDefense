@@ -38,7 +38,8 @@ namespace TowerDefense
 
             if (_livesAmount <= 0)
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(false);
+               //LevelSequenceController.Instance.FinishCurrentLevel(false);
+                LevelSequenceController.Instance.RestartLevel();
             }
         }
         public void AddGold(int gold)
@@ -67,7 +68,8 @@ namespace TowerDefense
             {
                 Respawn();
             }
-            else LevelSequenceController.Instance.FinishCurrentLevel(false);
+            //else LevelSequenceController.Instance.FinishCurrentLevel(false);
+            else LevelSequenceController.Instance.RestartLevel();
         }
         private void Respawn()
         {
