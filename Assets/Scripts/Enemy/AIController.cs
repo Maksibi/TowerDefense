@@ -206,7 +206,7 @@ namespace TowerDefense
 
             pathIndex = 0;
 
-            SetPatrolBehaviour(path[pathIndex]);
+            SetPatrolBehaviour(this.path[pathIndex]);
         }
         #endregion
         #region TImers

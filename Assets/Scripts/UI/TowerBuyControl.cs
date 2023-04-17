@@ -26,11 +26,11 @@ namespace TowerDefense
         {
             text.text = towerAsset.GoldCost.ToString();
 
-            button.GetComponent<Image>().sprite = towerAsset.GUISprite;
+            if(button != null) button.GetComponent<Image>().sprite = towerAsset.GUISprite;
         }
         private void GoldStatusCheck(int gold)
         {
-            if (gold >= towerAsset.GoldCost != button.interactable)
+            if (gold >= towerAsset.GoldCost != button.interactable & button != null)
             {
                 button.interactable = !button.interactable;
                 text.color = button.interactable ? Color.white : Color.red;

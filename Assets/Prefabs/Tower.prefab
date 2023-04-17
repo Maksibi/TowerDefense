@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a7cc12aaaec3e4d915ebabf47caf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turretMode: 2
+  _turretMode: 0
   _turretProperties: {fileID: 11400000, guid: d777d9758b7d217428193b4621344cf2, type: 2}

@@ -7,6 +7,9 @@ namespace TowerDefense
     {
         #region Editor Fields
         [SerializeField] private int _livesAmount;
+        public int LivesAmount { get {return _livesAmount; } }
+
+        public event Action<bool> OnPlayerDeath;
 
         [SerializeField] private SpaceShip ship;
         public SpaceShip ActiveShip => ship;
@@ -38,8 +41,8 @@ namespace TowerDefense
 
             if (_livesAmount <= 0)
             {
-               //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                LevelSequenceController.Instance.RestartLevel();
+                _livesAmount = 0;
+                OnPlayerDeath?.Invoke(false);
             }
         }
         public void AddGold(int gold)
@@ -54,13 +57,12 @@ namespace TowerDefense
         }
         public void ChangeLives(int lives)
         {
-
             TakeDamage(lives);
 
             OnLivesUpdate(_livesAmount);
         }
         #region Private API
-        private void OnShipDeath()
+        /*private void OnShipDeath()
         {
             _livesAmount--;
 
@@ -68,9 +70,8 @@ namespace TowerDefense
             {
                 Respawn();
             }
-            //else LevelSequenceController.Instance.FinishCurrentLevel(false);
             else LevelSequenceController.Instance.RestartLevel();
-        }
+        }*/
         private void Respawn()
         {
             if (LevelSequenceController.PlayerShip != null)
@@ -79,7 +80,7 @@ namespace TowerDefense
                 if (ship != null)
                 {
                     ship = newPlayerShip.GetComponent<SpaceShip>();
-                    ship.EventOnDeath.AddListener(OnShipDeath);
+                    //ship.EventOnDeath.AddListener(OnShipDeath);
                 }
             }
         }

@@ -1,5 +1,4 @@
-using UnityEditor.Build.Player;
-using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 namespace TowerDefense
@@ -7,7 +6,7 @@ namespace TowerDefense
     public class LevelSequenceController : MonoSingleton<LevelSequenceController>
     {
         #region Fields
-        public static string MainMenuSceneNickname = "main_menu";
+        public static string MapSceneNickname = "Map";
 
         public Episode CurrentEpisode { get; private set; }
 
@@ -18,6 +17,8 @@ namespace TowerDefense
         public PlayerStatistics playerStatistics { get; private set; }
 
         public static SpaceShip PlayerShip { get; set; }
+
+        public event Action OnLevelFinish;
         #endregion
 
         public void StartEpisode(Episode episode)
@@ -38,24 +39,31 @@ namespace TowerDefense
         {
             LastLevelResult = success;
 
-            CalculateLevelStat();
+            //CalculateLevelStat();
 
-            ResultPanelController.Instance.ShowResult(playerStatistics, success);
+            OnLevelFinish?.Invoke();
+
+            ResultPanelController.Instance.ShowResult(/*playerStatistics,*/ success);
         }
         public void AdvanceLevel()
         {
-            playerStatistics.Reset();
+            //playerStatistics.Reset();
 
             CurrentLevel++;
 
-            if (CurrentEpisode.Levels.Length <= CurrentLevel) SceneManager.LoadScene(MainMenuSceneNickname);
+            if (CurrentEpisode.Levels.Length <= CurrentLevel) SceneManager.LoadScene(MapSceneNickname);
             else SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
         }
         private void CalculateLevelStat()
         {
-            playerStatistics.score = Player.Instance.Score;
-            playerStatistics.numKills = Player.Instance.NumKills;
-            playerStatistics.time = (int)LevelController.Instance.LevelTime;
+            //playerStatistics.score = Player.Instance.Score;
+            //playerStatistics.numKills = Player.Instance.NumKills;
+            //playerStatistics.time = (int)LevelController.Instance.LevelTime;
+        }
+
+        internal void EndLevel(bool success)
+        {
+            throw new NotImplementedException();
         }
     }
 }

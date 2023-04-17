@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,7 +22,7 @@ namespace TowerDefense
         private float levelTime;
         public float LevelTime => levelTime;
 
-        private void Start()
+        protected void Start()
         {
             conditions = GetComponentsInChildren<ILevelCondition>();
         }
@@ -52,6 +53,11 @@ namespace TowerDefense
 
                 LevelSequenceController.Instance?.FinishCurrentLevel(true);
             }
+        }
+
+        internal void EndLevel()
+        {
+            Debug.Log("Endlevel");
         }
     }
 }
