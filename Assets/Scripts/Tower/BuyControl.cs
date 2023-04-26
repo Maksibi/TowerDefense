@@ -13,7 +13,7 @@ namespace TowerDefense
         private void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
- 
+
             BuildSite.OnClickEvent += MoveTransform;
             BuildSite.OnExitEvent += HideControl;
 
@@ -24,6 +24,11 @@ namespace TowerDefense
             ReduceTimer();
 
             if (timer <= 0) gameObject.SetActive(false);
+        }
+        private void OnDestroy()
+        {
+            BuildSite.OnClickEvent -= MoveTransform;
+            BuildSite.OnExitEvent -= HideControl;
         }
         private void MoveTransform(Transform target)
         {

@@ -4,6 +4,8 @@ using TowerDefense;
 public class Path : MonoBehaviour
 {
     [SerializeField] private AIPointControl[] points;
+    [SerializeField] private CircleArea area;
+    public CircleArea StartArea { get { return area; } }
 
     public int Lenght { get => points.Length; }
     public AIPointControl this[int i] { get => points[i]; }

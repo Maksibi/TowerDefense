@@ -22,6 +22,12 @@ namespace TowerDefense
             //score.text = "Score: " + levelResults.score.ToString();
             //time.text = "Time: " + levelResults.time.ToString();
         }
+        private void UpdateCurrentLevelStats()
+        {
+            int timeBonus = (int)(LevelController.Instance.RequiredTime - LevelController.Instance.LevelTime);
+
+            if(timeBonus > 0) { score.text += timeBonus; }
+        }
         public void OnButtonNextAction()
         {
             gameObject.SetActive(false);

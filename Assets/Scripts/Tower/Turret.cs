@@ -9,7 +9,7 @@ namespace TowerDefense
         public TurretMode TurretMode => _turretMode;
 
         [SerializeField] private TurretProperties _turretProperties;
-        public TurretProperties TurretProperties { set { _turretProperties = value; } }
+        public TurretProperties TurretProperties { set { _turretProperties = value; } get => _turretProperties; }
         #endregion
         private float _refireTimer;
 
@@ -32,7 +32,7 @@ namespace TowerDefense
             //if (spaceShip.DrawAmmo(TurretProperties.AmmoUsage) == false) return;
 
 
-            Projectile projectile = Instantiate(_turretProperties.ProjectilePrefab, transform.position, transform.rotation).GetComponent<Projectile>();
+            Projectile projectile = Instantiate(_turretProperties.ProjectilePrefab, transform.position, transform.rotation);
 
             _refireTimer = _turretProperties.Firerate;
 
@@ -49,6 +49,11 @@ namespace TowerDefense
         {
             _turretProperties = turretProperties;
             TurretProperties = turretProperties;
+        }
+        public void RotateTo(float angle)
+        {
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
         }
         #endregion
     }

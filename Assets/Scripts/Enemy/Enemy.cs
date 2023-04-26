@@ -7,8 +7,12 @@ public class Enemy : TowerDefense.Destructible
 {
     [SerializeField] private int damage = 1;
 
+    private Rigidbody2D rb;
+    public Rigidbody2D Rigidbody { get { return rb; } }
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         AIController controller = GetComponent<AIController>();
 
         controller.OnEndPath.AddListener(DamagePlayer);

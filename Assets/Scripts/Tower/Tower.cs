@@ -5,29 +5,42 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private float radius = 2.0f;
 
-    private Turret[] turrets;
+    [SerializeField] private Turret turret;
     private Enemy target;
+
+    private Vector3 leadPosition;
+    private Rigidbody2D selectedTargetRB;
+    private Projectile projectile;
 
     private void Awake()
     {
-        turrets = GetComponentsInChildren<Turret>();
+        projectile = turret.TurretProperties.ProjectilePrefab;
     }
-
     private void Update()
     {
-        Collider2D enteredEntity = Physics2D.OverlapCircle(transform.position, radius);
-
         if (target)
         {
             Vector2 targetVector = target.transform.position - transform.position;
 
             if (targetVector.magnitude <= radius)
             {
-                foreach (Turret turret in turrets)
-                {
-                    turret.transform.up = targetVector;
-                    turret.Fire();
-                }
+                CalculateLead();
+                //Vector2 lp = leadPosition + transform.position;
+
+                //float y = leadPosition.normalized.y - transform.position.normalized.y;
+                //float x = leadPosition.normalized.x - transform.position.normalized.x;
+                Vector2 dir = leadPosition - transform.position;
+                float angle = ( Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) - 90;
+                //float angle = transform.eulerAngles.z - leadPosition.z;
+                //float angle = Vector3.SignedAngle(transform.position, transform.position + leadPosition, Vector3.forward);
+
+                //Vector3 rotationAngle = new Vector3(0.0f, 0.0f, angle);
+                turret.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+                //turret.RotateTo(angle);
+
+                Debug.Log(angle);
+                Debug.DrawLine(transform.position, transform.position + (Vector3)targetVector, Color.blue);
+                turret.Fire();
             }
             else
             {
@@ -36,31 +49,32 @@ public class Tower : MonoBehaviour
         }
         else
         {
+            Collider2D enteredEntity = Physics2D.OverlapCircle(transform.position, radius);
             if (enteredEntity)
             {
                 target = enteredEntity.transform.root.GetComponent<Enemy>();
             }
         }
     }
+    private void CalculateLead()
+    {
+        selectedTargetRB = target.Rigidbody;
 
+        leadPosition = Utils.MakeLead(projectile, target.transform, transform, selectedTargetRB);
+        Debug.DrawLine(transform.position, leadPosition, Color.red);
+        //Debug.Log("Lead   " + leadPosition);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
 
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    private void SetTarget()
-    {
-
-    }
     public void UseAsset(TowerAsset towerAsset)
     {
-        if (turrets != null)
+        if (turret != null)
         {
-            foreach (Turret turret in turrets)
-            {
-                turret.UseAsset(towerAsset.turretProperties);
-            }
+            turret.UseAsset(towerAsset.turretProperties);
         }
     }
 }

@@ -10,8 +10,8 @@ namespace TowerDefense
     }
     public class LevelController : MonoSingleton<LevelController>
     {
-        [SerializeField] private int requiredTime;
-        public int RequiredTime => requiredTime;
+        [SerializeField] protected float requiredTime;
+        public float RequiredTime => requiredTime;
 
         [SerializeField] private UnityEvent EventLevelCompleted;
 
