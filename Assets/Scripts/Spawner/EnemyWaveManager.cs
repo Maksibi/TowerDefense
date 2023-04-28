@@ -30,5 +30,10 @@ namespace TowerDefense
 
             currentWave = currentWave.PrepareNext(SpawnEnemies);
         }
+        public void ForceNextWave()
+        {
+            Player.Instance.AddGold((int) currentWave.GetRemainingTime());
+            SpawnEnemies();
+        }
     }
 }

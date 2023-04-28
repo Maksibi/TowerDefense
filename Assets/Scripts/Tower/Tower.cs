@@ -11,7 +11,7 @@ public class Tower : MonoBehaviour
     private Vector3 leadPosition;
     private Rigidbody2D selectedTargetRB;
     private Projectile projectile;
-
+    #region Unity Events
     private void Awake()
     {
         projectile = turret.TurretProperties.ProjectilePrefab;
@@ -56,6 +56,7 @@ public class Tower : MonoBehaviour
             }
         }
     }
+#endregion
     private void CalculateLead()
     {
         selectedTargetRB = target.Rigidbody;

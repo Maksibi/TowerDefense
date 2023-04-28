@@ -18,9 +18,13 @@ namespace TowerDefense
             public Squad[] squads;
         }
 
+        public static Action<float> OnWavePrepare;
+
         [SerializeField] private PathGroup[] pathGroups;
 
         [SerializeField] private float prepareTime = 10f;
+
+        public float GetRemainingTime() { return prepareTime - Time.time; }
 
         private event Action OnWaveReady;
 
@@ -48,6 +52,7 @@ namespace TowerDefense
         }
         public void Prepare(Action spawnEnemies)
         {
+            OnWavePrepare?.Invoke(prepareTime);
             prepareTime += Time.time;
             enabled = true;
             OnWaveReady += spawnEnemies;
