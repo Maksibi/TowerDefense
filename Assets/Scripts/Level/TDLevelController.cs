@@ -29,7 +29,7 @@ namespace TowerDefense
 
                 if (requiredTime < Time.time)
                 {
-                    Debug.Log("Failed");
+                    Debug.Log("Time Failed");
                     levelScore--;
                 }
                 ResultPanelController.Instance.ShowResult(true);
@@ -66,6 +66,7 @@ namespace TowerDefense
             DisableAll<Spawner>();
             DisableAll<Projectile>();
             DisableAll<Tower>();
+            DisableAll<CallNextWave>();
         }
     }
 }

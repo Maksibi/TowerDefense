@@ -17,9 +17,15 @@ namespace TowerDefense
             EnemyWave.OnWavePrepare += (float time) =>
             {
                 timeToNextWave = time;
-
             };
         }
+        /*private void OnDisable()
+        {
+            EnemyWave.OnWavePrepare -= (float time) =>
+            {
+                timeToNextWave = 0;
+            };
+        }*/
         public void CallWave()
         {
             _waveManager.ForceNextWave();

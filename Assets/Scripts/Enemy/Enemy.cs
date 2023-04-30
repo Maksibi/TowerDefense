@@ -1,3 +1,4 @@
+using System;
 using TowerDefense;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Enemy : TowerDefense.Destructible
 
     private Rigidbody2D rb;
     public Rigidbody2D Rigidbody { get { return rb; } }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +28,6 @@ public class Enemy : TowerDefense.Destructible
         spriteRenderer.transform.localScale = asset.spriteScale;
 
         spriteRenderer.GetComponent<Animator>().runtimeAnimatorController = asset.animations;
-
 
         //GetComponent<SpaceShip>().Use(asset);
 

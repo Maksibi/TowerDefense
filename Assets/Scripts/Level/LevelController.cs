@@ -15,7 +15,7 @@ namespace TowerDefense
 
         [SerializeField] private UnityEvent EventLevelCompleted;
 
-        private ILevelCondition[] conditions;
+        private ILevelCondition condition;
 
         private bool IsLevelCompleted;
 
@@ -24,30 +24,32 @@ namespace TowerDefense
 
         protected void Start()
         {
-            conditions = GetComponentsInChildren<ILevelCondition>();
+            condition = GetComponentInChildren<ILevelCondition>();
+
+            FindObjectOfType<EnemyWaveManager>().OnAllWavesFinished += CheckLevelConditions;
         }
         private void Update()
         {
             if (IsLevelCompleted == false)
             {
                 levelTime += Time.deltaTime;
-
-                CheckLevelConditions();
             }
         }
         private void CheckLevelConditions()
         {
-            if (conditions == null | conditions.Length == 0) return;
+
+            if (condition == null /*| condition.Length == 0*/) return;
 
             int numCompleted = 0;
 
-            foreach(var v in conditions)
-            {
-                if(v.IsCompleted) numCompleted++;
-            }
+            //foreach(var v in condition)
+            //{
+                //if(IsCompleted) numCompleted++;
+            //}
 
-            if (numCompleted == conditions.Length)
+            if (numCompleted /*== condition.Length*/ == 0)
             {
+                Debug.Log("VSE LEVEL KONCHILSA");
                 IsLevelCompleted = true;
                 EventLevelCompleted?.Invoke();
 

@@ -21,6 +21,8 @@ namespace TowerDefense
         public static event Action<int> OnGoldUpdate;
         public static event Action<int> OnLivesUpdate;
 
+        public event Action OnPathEnd;
+
         private void Start()
         {
             OnGoldUpdate(playerGold);
@@ -36,6 +38,8 @@ namespace TowerDefense
         public void TakeDamage(int damage)
         {
             _livesAmount -= damage;
+
+            OnPathEnd?.Invoke();
 
             OnLivesUpdate(_livesAmount);
 

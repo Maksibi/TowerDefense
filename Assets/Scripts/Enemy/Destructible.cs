@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,13 +12,13 @@ namespace TowerDefense
         [SerializeField] private bool m_indestructible;
         public bool IsIndestructible => m_indestructible;
 
-
         [SerializeField] private int m_hitpoints;
         public int Hitpoints => m_hitpoints;
 
         private int m_currentHitpoints;
         public int CurrentHitpoints => m_currentHitpoints;
 
+        public event Action OnLifeEnd;
         #endregion
 
         #region Unity Events
@@ -44,12 +45,15 @@ namespace TowerDefense
 
         protected virtual void OnDeath()
         {
-            Debug.Log(Score);
-            Debug.Log(score);
+            //Debug.Log(Score);
+            //Debug.Log(score);
 
             Player.Instance.AddGold(Score);
 
+            Debug.Log("MAMAAA");
+
             _EventOnDeath?.Invoke();
+            OnLifeEnd?.Invoke();
 
             Destroy(gameObject);
         }

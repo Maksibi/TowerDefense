@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
                 turret.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
                 //turret.RotateTo(angle);
 
-                Debug.Log(angle);
+                //Debug.Log(angle);
                 Debug.DrawLine(transform.position, transform.position + (Vector3)targetVector, Color.blue);
                 turret.Fire();
             }
@@ -63,7 +63,6 @@ public class Tower : MonoBehaviour
 
         leadPosition = Utils.MakeLead(projectile, target.transform, transform, selectedTargetRB);
         Debug.DrawLine(transform.position, leadPosition, Color.red);
-        //Debug.Log("Lead   " + leadPosition);
     }
     private void OnDrawGizmosSelected()
     {
