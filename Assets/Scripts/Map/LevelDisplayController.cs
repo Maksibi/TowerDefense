@@ -10,11 +10,11 @@ namespace TowerDefense
         void Start()
         {
             int drawLevel = 0;
+            int score = 1;
 
-            while(drawLevel < levels.Length & MapsCompletion.Instance.TryIndex(drawLevel, out Episode episode, out int score))
+            while(score != 0 & drawLevel < levels.Length)
             {
-                levels[drawLevel++].SetLevelData(episode, score);
-                if (score == 0) break;
+                levels[drawLevel++].Initialise();
             }
             for (int i = drawLevel; i < levels.Length; i++)
             {

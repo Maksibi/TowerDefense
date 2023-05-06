@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace TowerDefense
     {
         public bool isCompleted { get { return resultPanel.gameObject.activeSelf & gameObject.activeSelf; } }
 
-        private Episode _episode;
+        [SerializeField] private Episode _episode;
         [SerializeField] private RectTransform resultPanel;
         [SerializeField] private Image[] images;
 
@@ -19,9 +20,9 @@ namespace TowerDefense
             }
             else Debug.Log("TBC");
         }
-        public void SetLevelData(Episode episode, int score)
+        public void Initialise()
         {
-            _episode = episode;
+            int score = MapsCompletion.Instance.GetEpisodeScore(_episode);
             resultPanel.gameObject.SetActive(score > 0);
             if (images.Length == 3)
             {
