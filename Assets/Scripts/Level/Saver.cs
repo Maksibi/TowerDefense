@@ -38,7 +38,7 @@ namespace TowerDefense
 
                 Debug.Log("Loaded");
             }
-            else Debug.Log($"No file at {path}");
+            else Debug.LogError($"No file at {path}");
         }
 
         public static void Save(string filename, T data)

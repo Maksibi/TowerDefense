@@ -13,8 +13,5 @@ namespace TowerDefense
 
         [SerializeField] private Sprite previewImage;
         public Sprite PreviewImage => previewImage;
-
-
-        
     }
 }

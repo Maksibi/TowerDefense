@@ -7,7 +7,7 @@ namespace TowerDefense
     {
         #region Editor Fields
         [SerializeField] private int _livesAmount;
-        public int LivesAmount { get {return _livesAmount; } }
+        public int LivesAmount { get { return _livesAmount; } }
 
         public event Action<bool> OnPlayerDeath;
 
@@ -17,6 +17,9 @@ namespace TowerDefense
         [SerializeField] private GameObject _PlayerShipPrefab;
 
         [SerializeField] private int playerGold;
+
+        [SerializeField] private UpgradeAsset healthUpgrade;
+        [SerializeField] private UpgradeAsset goldUpgrade;
         #endregion
         public static event Action<int> OnGoldUpdate;
         public static event Action<int> OnLivesUpdate;
@@ -25,8 +28,17 @@ namespace TowerDefense
 
         private void Start()
         {
+            int goldUpgradeLevel = Upgrades.GetUpgradesLevel(goldUpgrade);
+            Debug.Log ("GoldUpgrade: " + goldUpgradeLevel);
+            playerGold += (goldUpgradeLevel * 50);
+            int liveUpgradeLevel = Upgrades.GetUpgradesLevel(healthUpgrade);
+            Debug.Log ("liveUpgade: " + liveUpgradeLevel);
+            _livesAmount += (liveUpgradeLevel * 5);
+
             OnGoldUpdate(playerGold);
             OnLivesUpdate(_livesAmount);
+
+
             Respawn();
         }
         protected override void Awake()

@@ -386,6 +386,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985e0e3a619b20c45b42b818e95396b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &205467868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205467871}
+  - component: {fileID: 205467870}
+  - component: {fileID: 205467869}
+  m_Layer: 0
+  m_Name: SingleLevelTestObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &205467869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205467868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194a724e1b77e194f9ef9d293952869c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+  save:
+  - asset: {fileID: 11400000, guid: e9338a1ea9454b94d88b823b3504cd86, type: 2}
+    level: 0
+--- !u!114 &205467870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205467868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e65af8f9dd9ae543a6b3d676632ad9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+--- !u!4 &205467871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205467868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7795112, y: -0.47559035, z: -0.11634107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &295119638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2101,9 +2163,17 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3699439375053882785, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
+      propertyPath: goldUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: b2d59b3d8e1fb9543a416281fb623e70, type: 2}
+    - target: {fileID: 3699439375053882785, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
       propertyPath: _livesAmount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3699439375053882785, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
+      propertyPath: healthUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: e9338a1ea9454b94d88b823b3504cd86, type: 2}
     - target: {fileID: 3699439375053882786, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2156,7 +2226,8 @@ PrefabInstance:
       propertyPath: timeLimit
       value: 40
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3699439375053882799, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c48aeb7548c40314ab3cef91ac152cd2, type: 3}
 --- !u!114 &8673599673558274723
 MonoBehaviour:
